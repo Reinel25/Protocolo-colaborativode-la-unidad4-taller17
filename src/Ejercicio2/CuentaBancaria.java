@@ -1,7 +1,7 @@
 package Ejercicio2;
 
 public class CuentaBancaria {
-    protected double saldo;
+    private double saldo;
 
     public CuentaBancaria(double saldo) {
         this.saldo = saldo;
@@ -11,7 +11,11 @@ public class CuentaBancaria {
         return saldo;
     }
 
-    public void retirar(double monto) {
+    protected void retirarSaldo(double monto) {
         saldo -= monto;
+    }
+
+    public void retirar(double monto) {
+        retirarSaldo(monto);
     }
 }
